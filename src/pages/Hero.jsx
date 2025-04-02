@@ -60,7 +60,7 @@ export default function Hero() {
                 View Projects
               </Link>
               <a
-                href="../assets/PankajResume.pdf"
+                href="/PankajResume.pdf"
                 download
                 className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg hover:bg-[var(--primary)] hover:text-[var(--button-text)] transition-all text-sm sm:text-base">
                 Download CV
