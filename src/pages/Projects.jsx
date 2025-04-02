@@ -5,36 +5,60 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Expense Tracker",
-      description: "A web app to track daily expenses with category filters.",
+      title: "CarVision",
+      description: "Car showcase platform featuring vehicle comparisons and virtual test drives.",
       category: "Web",
-      img: "https://via.placeholder.com/300",
-      live: "#",
-      github: "#",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743601727/Screenshot_2025-04-02_191615_fklve0.png",
+      live: "#projects",
+      github: "#projects",
+    },
+    {
+      title: "SP Books",
+      description: "E-book marketplace with personalized recommendations and reading progress tracking.",
+      category: "Web",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743597484/Screenshot_2025-04-02_180746_faboe7.png",
+      live: "https://sp-book.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-Book",
+    },
+    {
+      title: "Trafalgar",
+      description: "Healthcare services landing page with doctor booking and telehealth features.",
+      category: "Web",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743599864/Screenshot_2025-04-02_184701_l9btcy.png",
+      live: "https://sp-trafalgar.netlify.app/",
+      github: "https://github.com/Pankaj-026/Trafalgar",
+    },
+    {
+      title: "SP Christmas",
+      description: "Interactive animated greetings from Santa using parallax effect.",
+      category: "Web",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743598368/Screenshot_2025-04-02_182232_rwo8to.png",
+      live: "https://sp-christmas.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-Christmas",
     },
     {
       title: "To-Do List App",
-      description: "A simple yet powerful task manager with local storage.",
+      description: "Productivity tool with priority tagging and cross-device synchronization.",
       category: "Web",
-      img: "https://via.placeholder.com/300",
-      live: "#",
-      github: "#",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743597145/Screenshot_2025-04-02_180117_aszbxv.png",
+      live: "https://sp-task.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-ToDoList",
     },
     {
       title: "Weather App",
       description: "A real-time weather app using OpenWeather API.",
       category: "Web",
-      img: "https://via.placeholder.com/300",
-      live: "#",
-      github: "#",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743597755/Screenshot_2025-04-02_174016_biglmc.png",
+      live: "https://sp-weather.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-Weather",
     },
     {
       title: "DineSPace",
       description: "A restaurant cafe seat reservation management app.",
       category: "Mobile",
-      img: "https://via.placeholder.com/300",
-      live: "#",
-      github: "#",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743163448/AsaGagaKamon_EaterSD_KimberlyMotos_31of32___1_.7_fgao26.jpg",
+      live: "#projects",
+      github: "https://github.com/Pankaj-026/DineSpace",
     },
   ];
 
@@ -42,9 +66,11 @@ export default function Projects() {
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <section className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
+    <section
+      id="projects"
+      className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
       {/* Header */}
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-4 mb-8">
           Projects
         </h2>
@@ -100,11 +126,13 @@ export default function Projects() {
               <div className="flex flex-wrap gap-3 mt-4">
                 <a
                   href={project.live}
+                  target="_blank"
                   className="flex-1 px-4 py-2 text-center bg-[var(--primary)] text-[var(--button-text)] rounded-md font-medium hover:bg-[var(--primary)/90] hover:text-[var(--primary)] border border-[var(--primary)] transition-colors duration-300">
                   Live Demo
                 </a>
                 <a
                   href={project.github}
+                  target="_blank"
                   className="flex-1 px-4 py-2 text-center border border-[var(--primary)] text-[var(--primary)] rounded-md font-medium hover:bg-[var(--primary)] hover:text-[var(--button-text)] transition-colors duration-300">
                   GitHub
                 </a>

@@ -30,11 +30,11 @@ export default function Hero() {
 
   return (
     <>
-      <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-36 bg-[var(--bg)] py-12">
+      <section id="home" className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-36 bg-[var(--bg)] py-10">
         <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="md:w-1/2 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--primary)] mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--primary)] mb-4">
               Hi, I'm Pankaj Gupta
             </h1>
 
@@ -47,7 +47,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl text-[var(--text)] mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
+            <p className="text-base sm:text-lg md:text-lg text-[var(--text)] mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
               Passionate about crafting scalable web applications with modern
               technologies. Let's turn your vision into exceptional digital
               experiences!
@@ -60,7 +60,7 @@ export default function Hero() {
                 View Projects
               </Link>
               <a
-                href="/resume.pdf"
+                href="../assets/PankajResume.pdf"
                 download
                 className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-[var(--primary)] text-[var(--primary)] rounded-lg hover:bg-[var(--primary)] hover:text-[var(--button-text)] transition-all text-sm sm:text-base">
                 Download CV

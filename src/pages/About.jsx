@@ -6,7 +6,7 @@ export default function About() {
         About Me
       </h2>
 
-      <p className="text-base md:text-lg leading-relaxed md:leading-loose">
+      <p className="text-base">
           I am{" "}
           <span className="text-[var(--secondary)] font-semibold">
             Pankaj Gupta

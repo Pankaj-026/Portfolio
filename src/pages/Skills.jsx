@@ -33,6 +33,32 @@ export default function Skills() {
   }, [theme]);
 
   const skills = [
+    // Frontend
+    {
+      title: "React",
+      category: "Frontend",
+      img: "/icons/react.svg",
+    },
+    {
+      title: "JavaScript",
+      category: "Frontend",
+      img: "/icons/js-svgrepo-com.svg",
+    },
+    {
+      title: "Redux",
+      category: "Frontend",
+      img: "/icons/redux-svgrepo-com.svg",
+    },
+    {
+      title: "Tailwind CSS",
+      category: "Frontend",
+      img: "/icons/tailwind-svgrepo-com.svg",
+    },
+    {
+      title: "React Native",
+      category: "Frontend",
+      img: "/icons/react.svg",
+    },
     {
       title: "HTML",
       category: "Frontend",
@@ -44,54 +70,16 @@ export default function Skills() {
       img: "/icons/css3-svgrepo-com.svg",
     },
     {
-      title: "JavaScript",
-      category: "Frontend",
-      img: "/icons/js-svgrepo-com.svg",
-    },
-    {
-      title: "React",
-      category: "Frontend",
-      img: "/icons/react.svg",
-    },
-    {
-      title: "Redux",
-      category: "Frontend",
-      img: "/icons/redux-svgrepo-com.svg",
-    },
-    {
-      title: "Git",
-      category: "Tools",
-      img: "/icons/git-svgrepo-com.svg",
-    },
-    {
-      title: "GitHub",
-      category: "Tools",
-      img: "/icons/github-142-svgrepo-com.svg",
-    },
-    {
       title: "Bootstrap",
       category: "Frontend",
       img: "/icons/bootstrap-svgrepo-com.svg",
     },
-    {
-      title: "MySQL",
-      category: "Backend",
-      img: "/icons/mysql-svgrepo-com.svg",
-    },
+  
+    // Backend
     {
       title: "MongoDB",
       category: "Backend",
       img: "/icons/mongo-svgrepo-com.svg",
-    },
-    {
-      title: "Tailwind CSS",
-      category: "Frontend",
-      img: "/icons/tailwind-svgrepo-com.svg",
-    },
-    {
-      title: "React Native",
-      category: "Frontend",
-      img: "/icons/react.svg",
     },
     {
       title: "Node.js",
@@ -109,9 +97,26 @@ export default function Skills() {
       img: "/icons/firebase-svgrepo-com.svg",
     },
     {
+      title: "MySQL",
+      category: "Backend",
+      img: "/icons/mysql-svgrepo-com.svg",
+    },
+    {
       title: "PHP",
       category: "Backend",
       img: "/icons/php-svgrepo-com.svg",
+    },
+  
+    // Tools
+    {
+      title: "Git",
+      category: "Tools",
+      img: "/icons/git-svgrepo-com.svg",
+    },
+    {
+      title: "GitHub",
+      category: "Tools",
+      img: "/icons/github-142-svgrepo-com.svg",
     },
     {
       title: "Docker",
@@ -123,16 +128,11 @@ export default function Skills() {
       category: "Tools",
       img: "/icons/jest-svgrepo-com.svg",
     },
-    {
-      title: "SASS",
-      category: "Frontend",
-      img: "/icons/sass-svgrepo-com.svg",
-    },
-    {
-      title: "Webpack",
-      category: "Tools",
-      img: "/icons/webpack-svgrepo-com.svg",
-    },
+    // {
+    //   title: "Webpack",
+    //   category: "Tools",
+    //   img: "/icons/webpack-svgrepo-com.svg",
+    // },
     {
       title: "Vite",
       category: "Tools",
@@ -144,9 +144,10 @@ export default function Skills() {
       img: "/icons/parcel-icon-svgrepo-com.svg",
     },
   ];
+  
 
   return (
-    <section className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
+    <section id="skills" className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
       <h3 className="text-4xl text-[var(--primary)] font-bold border-b border-[var(--primary)] pb-3 mb-8">
         Skills
       </h3>
