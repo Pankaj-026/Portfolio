@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HeroImage from "../assets/images/hero2.webp";
+import HeroImage from "../assets/images/hero1.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import About from "./About";
@@ -30,7 +30,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="min-h-[50vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-36 bg-[var(--bg)] py-12">
+      <section className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-36 bg-[var(--bg)] py-12">
         <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="md:w-1/2 text-center md:text-left">
