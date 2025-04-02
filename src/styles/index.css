@@ -6,6 +6,8 @@
   --primary: #1e40af;
   --secondary: #f97316;
   --button-text: #ffffff;
+  --white-color: #ffffff;
+  --primary-color: #1e40af;
 
   /* Font Variables */
   --font-body: "Inter", sans-serif;
@@ -13,13 +15,9 @@
 
   /* Font Sizes */
   --heading-size: 3rem;
-  /* 32px */
   --subheading-size: 2.5rem;
-  /* 24px */
   --paragraph-size: 1.5rem;
-  /* 18px */
   --title-size: 1rem;
-  /* 20px */
 }
 
 /* Dark Theme */
@@ -29,4 +27,33 @@
   --primary: #f8fafc;
   --secondary: #f97316;
   --button-text: #0f172a;
+  --white-color: #ffffff;
+  --primary-color: #1e40af;
+}
+
+/* Smooth transitions for theme changes */
+nav,
+body,
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mobile menu overlay backdrop */
+.menu-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+.typed-cursor {
+  opacity: 1;
+  animation: typedjsBlink 0.7s infinite;
+  color: var(--primary);
+}
+
+@keyframes typedjsBlink {
+  50% { opacity: 0.0; }
 }

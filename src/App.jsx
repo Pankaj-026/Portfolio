@@ -8,6 +8,7 @@ import "./styles/App.css";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import Skills from "./pages/Skills";
 
 function Layout() {
   return (
@@ -27,7 +28,9 @@ export default function App() {
       <Routes>
         {/* Home page with everything */}
         <Route path="/" element={<Layout />}>
+          <Route index element={<Hero />} />
           <Route path="home" element={<Hero />} />
+          <Route path="skills" element={<Skills />} />
           <Route path="about" element={<About />} />
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
