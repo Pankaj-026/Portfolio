@@ -51,6 +51,7 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+
   return (
     <nav className="py-4 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-36 flex justify-between items-center bg-[var(--bg)] shadow-md sticky top-0 z-50">
       {/* Logo */}

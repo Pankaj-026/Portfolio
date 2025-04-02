@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HeroImage from "../assets/images/user.png";
+import HeroImage from "../assets/images/hero2.webp";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import About from "./About";

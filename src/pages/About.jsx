@@ -6,29 +6,30 @@ export default function About() {
         About Me
       </h2>
 
-      <p className="leading-8 text-[var(--heading-size)]">
-        I am{" "}
-        <span className="text-[var(--secondary)] font-semibold">
-          Pankaj Gupta
-        </span>
-        , an aspiring{" "}
-        <span className="text-[var(--secondary)]">Full Stack Developer</span>{" "}
-        passionate about creating intuitive and efficient digital solutions. I
-        specialize in React, JavaScript, and modern web technologies. I thrive
-        on solving complex problems and turning ideas into reality through code.
-        My journey into software development started with a deep curiosity for
-        how things work on the web. Over time, I honed my skills in frontend
-        development, working with libraries like React.js, while also expanding
-        my expertise in backend development using Node.js, Express, and MongoDB.
-        Beyond coding, I have strong leadership abilities, having led various
-        college initiatives such as DLLE and PR management for inter-college
-        fests. These experiences have helped me develop essential skills in
-        communication, teamwork, and project management. When I’m not coding,
-        you can find me reading books, tech blogs, playing
-        <span className="text-[var(--secondary)]"> chess </span> or
-        <span className="text-[var(--secondary)]"> basketball </span>, and
-        exploring new technologies.
-      </p>
+      <p className="text-base md:text-lg leading-relaxed md:leading-loose">
+          I am{" "}
+          <span className="text-[var(--secondary)] font-semibold">
+            Pankaj Gupta
+          </span>
+          , an aspiring{" "}
+          <span className="text-[var(--secondary)]">Full Stack Developer</span>{" "}
+          passionate about creating intuitive and efficient digital solutions. I
+          specialize in React, JavaScript, and modern web technologies. I thrive
+          on solving complex problems and turning ideas into reality through code.
+          <br /><br />
+          My journey into software development started with a deep curiosity for
+          how things work on the web. Over time, I honed my skills in frontend
+          development with React.js, while expanding my backend expertise in
+          Node.js, Express, and MongoDB.
+          <br /><br />
+          Beyond coding, I've led college initiatives like DLLE and PR management
+          for inter-college fests, developing essential skills in communication,
+          teamwork, and project management. When I'm not coding, you can find me
+          reading tech blogs, playing{" "}
+          <span className="text-[var(--secondary)]">chess</span> or{" "}
+          <span className="text-[var(--secondary)]">basketball</span>, and
+          exploring new technologies.
+        </p>
 
       {/* Education Section */}
       <h3 className="text-[var(--primary)] text-[2rem] font-bold border-b border-[var(--primary)] mt-12 mb-6">
