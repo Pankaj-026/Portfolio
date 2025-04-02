@@ -54,11 +54,11 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link
-                to="#projects"
+              <a
+                href="#projects"
                 className="px-5 py-2.5 sm:px-6 sm:py-3 bg-[var(--primary)] text-[var(--button-text)] rounded-lg shadow-md hover:shadow-lg transition-all text-sm sm:text-base">
                 View Projects
-              </Link>
+              </a>
               <a
                 href="/PankajResume.pdf"
                 download
