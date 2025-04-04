@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
 
 
     return (
-        <button onClick={() => setDarkMode(!darkMode)} className="bg-gray-200 dark:bg-gray-800 p-2 rounded-lg transition duration-300 ease-in-out">
+        <button onClick={() => setDarkMode(!darkMode)} className="bg-gray-200 dark:bg-gray-800 cursor-pointer p-2 rounded-lg transition duration-300 ease-in-out">
             {darkMode ? <Sun /> : <Moon />}
         </button>
     )

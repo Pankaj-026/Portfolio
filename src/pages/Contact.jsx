@@ -118,6 +118,7 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              autoComplete="off"
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
@@ -136,6 +137,7 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
+              autoComplete="off"
               placeholder="your@email.com"
               value={formData.email}
               onChange={handleChange}
@@ -155,6 +157,7 @@ export default function Contact() {
               name="message"
               placeholder="Your message..."
               rows="5"
+              autoComplete="off"
               value={formData.message}
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-lg bg-white text-black focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"

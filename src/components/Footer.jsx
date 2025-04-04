@@ -118,7 +118,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <FaPhone className="text-[var(--primary)]" />
                 <a href='tel:+918591272429'>
-                +91 XXXXX XXXXX
+                +91 85912 72429
                 </a>
               </li>
             </ul>

@@ -5,12 +5,20 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "CarVision",
-      description: "Car showcase platform featuring vehicle comparisons and virtual test drives.",
+      title: "Weather App",
+      description: "A real-time weather app using OpenWeather API.",
       category: "Web",
-      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743601727/Screenshot_2025-04-02_191615_fklve0.png",
-      live: "#projects",
-      github: "#projects",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743597755/Screenshot_2025-04-02_174016_biglmc.png",
+      live: "https://sp-weather.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-Weather",
+    },
+    {
+      title: "SP Christmas",
+      description: "Interactive animated greetings from Santa using parallax effect.",
+      category: "Web",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743598368/Screenshot_2025-04-02_182232_rwo8to.png",
+      live: "https://sp-christmas.netlify.app/",
+      github: "https://github.com/Pankaj-026/SP-Christmas",
     },
     {
       title: "SP Books",
@@ -28,14 +36,7 @@ export default function Projects() {
       live: "https://sp-trafalgar.netlify.app/",
       github: "https://github.com/Pankaj-026/Trafalgar",
     },
-    {
-      title: "SP Christmas",
-      description: "Interactive animated greetings from Santa using parallax effect.",
-      category: "Web",
-      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743598368/Screenshot_2025-04-02_182232_rwo8to.png",
-      live: "https://sp-christmas.netlify.app/",
-      github: "https://github.com/Pankaj-026/SP-Christmas",
-    },
+
     {
       title: "To-Do List App",
       description: "Productivity tool with priority tagging and cross-device synchronization.",
@@ -45,19 +46,19 @@ export default function Projects() {
       github: "https://github.com/Pankaj-026/SP-ToDoList",
     },
     {
-      title: "Weather App",
-      description: "A real-time weather app using OpenWeather API.",
+      title: "CarVision",
+      description: "Car showcase platform featuring vehicle comparisons and virtual test drives.",
       category: "Web",
-      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743597755/Screenshot_2025-04-02_174016_biglmc.png",
-      live: "https://sp-weather.netlify.app/",
-      github: "https://github.com/Pankaj-026/SP-Weather",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743601727/Screenshot_2025-04-02_191615_fklve0.png",
+      live: "https://sp-pankaj.vercel.app/notFound",
+      github: "https://sp-pankaj.vercel.app/notFound",
     },
     {
       title: "DineSPace",
       description: "A restaurant cafe seat reservation management app.",
       category: "Mobile",
       img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743163448/AsaGagaKamon_EaterSD_KimberlyMotos_31of32___1_.7_fgao26.jpg",
-      live: "#projects",
+      live: "https://sp-pankaj.vercel.app/notFound",
       github: "https://github.com/Pankaj-026/DineSpace",
     },
   ];
