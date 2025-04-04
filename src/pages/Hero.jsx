@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import HeroImage from "../assets/images/hero1.jpg";
+import HeroImage from "../assets/images/hero3.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
 import About from "./About";
@@ -74,7 +73,7 @@ export default function Hero() {
               <img
                 src={HeroImage}
                 alt="Pankaj Gupta"
-                className="w-full h-full object-cover rounded-full shadow-xl border-4 border-[var(--primary)] hover:rotate-3 transition-transform duration-300"
+                className="w-full h-full object-cover rounded-full shadow-xl border-4 border-[var(--primary)]"
               />
             </div>
           </div>

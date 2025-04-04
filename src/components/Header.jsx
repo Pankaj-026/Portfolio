@@ -64,7 +64,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-8 items-center">
+      <div className="hidden cursor-pointer md:flex gap-8 items-center">
         {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
           <NavItem key={item} to={item.toLowerCase()}>
             {item}
@@ -93,7 +93,7 @@ export default function Navbar() {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="container mx-auto px-4 pt-24">
+        <div className="container cursor-pointer mx-auto px-4 pt-24">
           <div className="flex flex-col items-center gap-8">
             {["Home", "About", "Projects", "Contact"].map((item) => (
               <NavItem
