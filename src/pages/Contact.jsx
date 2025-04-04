@@ -60,7 +60,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
+    <section
+      id="contact"
+      className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
       <h2 className="text-4xl text-[var(--primary)] font-bold border-b border-[var(--primary)] pb-3 mb-8 md:mb-12">
         Contact Me
       </h2>
@@ -68,9 +70,7 @@ export default function Contact() {
       <div className="w-full max-w-8xl mx-auto flex flex-col lg:flex-row gap-8 p-6 md:p-8 rounded-xl shadow-md">
         {/* Contact Info */}
         <div className="lg:flex-1 space-y-4 md:space-y-6">
-          <h3 className="text-3xl font-bold">
-            Let's Connect
-          </h3>
+          <h3 className="text-3xl font-bold">Let's Connect</h3>
 
           <p className="text-lg md:text-xl leading-relaxed">
             I'm currently looking for new opportunities, my inbox is always
@@ -80,7 +80,11 @@ export default function Contact() {
 
           <div className="space-y-2">
             <p className="text-lg font-medium">
-              <strong>Email:</strong> pankajgupta1063@gmail.com
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=pankajgupta1063@gmail.com"
+                target="_blank">
+                <strong>Email:</strong> pankajgupta1063@gmail.com
+              </a>
             </p>
 
             <div className="flex gap-4 mt-4">

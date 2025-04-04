@@ -1,11 +1,11 @@
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaTwitter, 
-  FaEnvelope, 
-  FaPhone, 
-  FaMapMarkerAlt 
-} from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -38,15 +38,16 @@ const Footer = () => {
                 className="text-2xl hover:text-[var(--primary)] transition-colors duration-300">
                 <FaLinkedin />
               </a>
-              <a
-                href="https://twitter.com/yourusername"
+              {/* <a
+                href="https://x.com/RedEye1621120?t=gqq425L7Oj6w6Gw0EXV7dg&s=09"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl hover:text-[var(--primary)] transition-colors duration-300">
                 <FaTwitter />
-              </a>
+              </a> */}
               <a
-                href="mailto:pankajgupta1063@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&to=pankajgupta1063@gmail.com"
+                target="_blank"
                 className="text-2xl hover:text-[var(--primary)] transition-colors duration-300">
                 <FaEnvelope />
               </a>
@@ -110,20 +111,19 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-[var(--primary)]" />
                 <a
-                  href="mailto:pankajgupta1063@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&to=pankajgupta1063@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[var(--primary)] transition-colors duration-300">
                   pankajgupta1063@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <FaPhone className="text-[var(--primary)]" />
-                <a href='tel:+918591272429'>
-                +91 85912 72429
-                </a>
+                <a href="tel:+918591272429">+91 85912 72429</a>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* Copyright Section */}
@@ -131,7 +131,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Pankaj Gupta. All rights reserved.</p>
           <p className="flex space-x-6 mt-4 md:mt-0">
             Built with ❤️ using React and Tailwind CSS.
-            
           </p>
         </div>
       </div>
