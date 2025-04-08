@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -13,8 +13,7 @@ export default function Contact() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") === "dark" ? true : false
   );
-
-  // const [expressLogo, setExpressLogo] = useState("");
+  const debounceRef = useRef(null);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -30,25 +29,23 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  // useEffect(() => {
-  //   if (theme) {
-  //     setExpressLogo("../../public/icons/express-dark.svg");
-  //   } else {
-  //     setExpressLogo("../../public/icons/express-svgrepo-com.svg");
-  //   }
-  // }, [theme]);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    if (debounceRef.current) return;
+  
+    debounceRef.current = setTimeout(() => {
+      debounceRef.current = null;
+    }, 1000); // 1 second debounce
+  
     const serviceId = "service_74dgnrs";
     const templateId = "template_ejcz38x";
     const publicKey = "iKUsHPTI3mAPfddyf";
-
+  
     try {
       await emailjs.send(serviceId, templateId, formData, publicKey);
       alert("Message Sent! We will get back to you soon.");
@@ -58,6 +55,7 @@ export default function Contact() {
       alert("Failed to send message. Please try again later.");
     }
   };
+  
 
   return (
     <section
