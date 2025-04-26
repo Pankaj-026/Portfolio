@@ -1,7 +1,6 @@
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,

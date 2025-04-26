@@ -5,6 +5,14 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "SP Vision",
+      description: "A video streaming platform for all your entertainment needs.",
+      category: "Web",
+      img: "https://res.cloudinary.com/drwy0czge/image/upload/v1745697508/homepage-of-amazon-prime-video-streaming-service-on-an-iphone-6-plus-FDTYNJ_kyeqqm.jpg",
+      live: "https://spvision-9fbf3.web.app/",
+      github: "https://github.com/Pankaj-026/SP-Vision",
+    },
+    {
       title: "Weather App",
       description: "A real-time weather app using OpenWeather API.",
       category: "Web",
@@ -58,7 +66,7 @@ export default function Projects() {
       description: "A restaurant cafe seat reservation management app.",
       category: "Mobile",
       img: "https://res.cloudinary.com/drwy0czge/image/upload/v1743163448/AsaGagaKamon_EaterSD_KimberlyMotos_31of32___1_.7_fgao26.jpg",
-      live: "https://sp-pankaj.vercel.app/notFound",
+      live: "https://drive.google.com/file/d/1ThsSdFfdae1nAKHJGpTNfbxnDK8e_YkY/view?usp=sharing",
       github: "https://github.com/Pankaj-026/DineSpace",
     },
   ];
