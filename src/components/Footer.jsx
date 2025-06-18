@@ -5,6 +5,7 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 const Footer = () => {
   return (
@@ -118,7 +119,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhone className="text-[var(--primary)]" />
+                <FaPhone className="text-[var(--primary)] transform scale-x-[-1]" />
                 <a href="tel:+918591272429">+91 85912 72429</a>
               </li>
             </ul>

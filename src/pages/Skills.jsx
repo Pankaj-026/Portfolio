@@ -18,12 +18,12 @@ export default function Skills() {
       attributeFilter: ["class"],
     });
 
-    
+
     return () => observer.disconnect();
   }, []);
-  
+
   useEffect(() => {
-    
+
     if (theme) {
       setExpressLogo("/icons/express-dark.svg");
     } else {
@@ -74,7 +74,7 @@ export default function Skills() {
       category: "Frontend",
       img: "/icons/bootstrap-svgrepo-com.svg",
     },
-  
+
     // Backend
     {
       title: "MongoDB",
@@ -106,7 +106,7 @@ export default function Skills() {
       category: "Backend",
       img: "/icons/php-svgrepo-com.svg",
     },
-  
+
     // Tools
     {
       title: "Git",
@@ -144,7 +144,7 @@ export default function Skills() {
       img: "/icons/parcel-icon-svgrepo-com.svg",
     },
   ];
-  
+
 
   return (
     <section id="skills" className="min-h-[90vh] mx-auto px-4 sm:px-6 lg:px-16 xl:px-36 py-6 md:py-16 text-[var(--text)] bg-[var(--bg)]">
@@ -183,11 +183,13 @@ export default function Skills() {
               <div
                 key={index}
                 className="flex items-center gap-3 rounded-md p-3 bg-zinc-300/35 dark:bg-[#ffffff0a] dark:backdrop-blur-2xl shadow-md hover:bg-zinc-300/50 dark:hover:bg-[#ffffff0a] transition duration-300 ease-in-out">
-                <img
-                  src={skill.img}
-                  alt={skill.title}
-                  className="w-10 h-10 object-cover" // Adjusted size for the image
-                />
+                {skill.img &&
+                  <img
+                    src={skill.img}
+                    alt={skill.title}
+                    className="w-10 h-10 object-cover" // Adjusted size for the image
+                  />
+                }
                 <h3>{skill.title}</h3>
               </div>
             );
