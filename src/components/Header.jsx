@@ -4,37 +4,55 @@ import { useState, useEffect, useRef } from "react";
 import DarkLogo from "../assets/images/spLogo.png";
 import LightLogo from "../assets/images/spark.png";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  const NavItem = ({ to, children, onClick, className }) => (
-    <Link
-      to={`/${to}`}
-      className={`text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300 font-medium ${
-        className || ""
-      }`}
-      onClick={onClick}
-    >
-      {children}
-    </Link>
-  );
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const NavItems = ({ items, className, onItemClick, mobile = false }) => {
+    const [hovered, setHovered] = useState(null);
+
+    return (
+      <motion.div
+        onMouseLeave={() => setHovered(null)}
+        className={cn(
+          "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800",
+          mobile ? "flex" : "hidden lg:flex",
+          className,
+        )}
+      >
+        {items.map((item, idx) => (
+          <Link
+            onMouseEnter={() => setHovered(idx)}
+            onClick={(e) => {
+              if (onItemClick) onItemClick();
+              setMenuOpen(false);
+            }}
+            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            key={`link-${idx}`}
+            to={`/${item.link}`}
+          >
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </Link>
+        ))}
+      </motion.div>
+    );
+  };
 
   // Theme change observer
   useEffect(() => {
@@ -51,66 +69,90 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll observer
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
-    <nav className="py-4 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-36 flex justify-between items-center bg-[var(--bg)] shadow-md sticky top-0 z-50">
-      {/* Logo */}
-      <Link to="/" className="z-50">
-        <img
-          src={isDarkMode ? DarkLogo : LightLogo}
-          alt="Logo"
-          className="w-12 h-12 hover:scale-105 transition-transform"
-        />
-      </Link>
-
-      {/* Desktop Navigation */}
-      <div className="hidden cursor-pointer md:flex gap-8 items-center">
-        {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
-          <NavItem key={item} to={item.toLowerCase()}>
-            {item}
-          </NavItem>
-        ))}
-        <ThemeSwitcher />
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden p-2 z-50 cursor-pointer"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle navigation menu"
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center">
+      <nav
+        className={`flex items-center justify-between px-6 md:px-8 py-3 bg-[var(--bg)] text-[var(--text)] rounded-full w-[90%] max-w-6xl transition-all duration-300 shadow-md ${scrolled ? "py-2 backdrop-blur-sm bg-[var(--bg-opacity)]" : ""
+          }`}
       >
-        {menuOpen ? (
-          <X size={28} className="text-[var(--text)]" />
-        ) : (
-          <Menu size={28} className="text-[var(--text)]" />
-        )}
-      </button>
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 z-50">
+          <img
+            src={isDarkMode ? DarkLogo : LightLogo}
+            alt="Logo"
+            className="w-10 h-10 hover:scale-105 transition-transform"
+          />
+          {/* <span className="font-semibold hidden sm:inline-block">Sp Portfolio</span> */}
+        </Link>
+
+        {/* Desktop Navigation */}
+        <NavItems
+          items={[
+            { name: "Home", link: "home" },
+            { name: "About", link: "about" },
+            { name: "Projects", link: "projects" },
+            { name: "Skills", link: "skills" },
+            { name: "Contact", link: "contact" },
+          ]}
+          onItemClick={() => setMenuOpen(false)}
+          mobile={false}
+        />
+
+        <ThemeSwitcher />
+
+
+        {/* CTA + Mobile Menu Toggle */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            ref={buttonRef}
+            className="p-2 z-50 cursor-pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? (
+              <X size={28} className="text-[var(--text)]" />
+            ) : (
+              <Menu size={28} className="text-[var(--text)]" />
+            )}
+          </button>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
-      <div
-        ref={menuRef}
-        className={`md:hidden fixed top-0 right-0 w-full h-screen bg-[var(--bg)] transform transition-all duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="container cursor-pointer mx-auto px-4 pt-24">
-          <div className="flex flex-col items-center gap-8">
-            {["Home", "About", "Projects", "Contact"].map((item) => (
-              <NavItem
-                key={item}
-                to={item.toLowerCase()}
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl"
-              >
-                {item}
-              </NavItem>
+      {menuOpen && (
+        <div
+          ref={menuRef}
+          className="fixed z-40 top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl bg-[var(--bg)] backdrop-blur-md rounded-xl text-[var(--text)] px-6 py-4 md:hidden transition-all duration-300 shadow-lg"
+        >
+          <ul className="flex flex-col gap-4 text-base">
+            {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
+              <li key={item}>
+                <NavItem
+                  to={item.toLowerCase()}
+                  className="block w-full px-3 py-2 rounded-md hover:bg-[var(--primary-light)] transition"
+                >
+                  {item}
+                </NavItem>
+              </li>
             ))}
-            <div className="mt-8">
-              <ThemeSwitcher mobile />
-            </div>
-          </div>
+            <li>
+              <div className="mt-4">
+                <ThemeSwitcher mobile />
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 }
