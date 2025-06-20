@@ -26,7 +26,7 @@ export default function Navbar() {
         onMouseLeave={() => setHovered(null)}
         className={cn(
           "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800",
-          mobile ? "flex" : "hidden lg:flex",
+          mobile ? "flex" : "hidden md:flex",
           className,
         )}
       >
@@ -108,23 +108,25 @@ export default function Navbar() {
           mobile={false}
         />
 
-        <ThemeSwitcher />
 
 
         {/* CTA + Mobile Menu Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
-          <button
-            ref={buttonRef}
-            className="p-2 z-50 cursor-pointer"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
-          >
-            {menuOpen ? (
-              <X size={28} className="text-[var(--text)]" />
-            ) : (
-              <Menu size={28} className="text-[var(--text)]" />
-            )}
-          </button>
+        <div className="flex">
+          <ThemeSwitcher />
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              ref={buttonRef}
+              className="p-2 z-50 cursor-pointer"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {menuOpen ? (
+                <X size={28} className="text-[var(--text)]" />
+              ) : (
+                <Menu size={28} className="text-[var(--text)]" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 

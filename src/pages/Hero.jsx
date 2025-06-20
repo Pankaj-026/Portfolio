@@ -66,10 +66,10 @@ export default function Hero() {
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 
-        <section id="home" className="relative z-20 py-24 sm:py-40 md:py-60 w-full">
-          <div className="container mx-auto flex flex-col-reverse md:flex-row items-center px-0 sm:px-14">
+        <section id="home" className="relative z-20 py-24 sm:py-30 md:py-40 w-full">
+          <div className="container mx-auto flex flex-col-reverse md:flex-row items-center px-0 lg:px-14">
             {/* Text Content */}
-            <div className="w-full md:w-1/2 text-center md:text-left sm:px-10 px-0">
+            <div className="w-full md:w-1/2 text-center md:text-left lg:px-10 px-0">
               <h1 className={cn("text-2xl sm:text-4xl md:text-5xl py-0 md:py-2 font-bold text-transparent relative z-20 mb-4 bg-clip-text",
                 isDarkMode ? "bg-gradient-to-b from-neutral-200 to-neutral-500 " :
                   "bg-gradient-to-b from-neutral-700 to-neutral-500")}>
@@ -122,7 +122,7 @@ export default function Hero() {
 
             {/* Image */}
             <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
-              <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
+              <div className="relative w-52 h-52 xs:w-48 xs:h-48 sm:w-60 sm:h-60 md:w-72 md:h-72">
                 <img
                   src={HeroImage}
                   alt="Pankaj Gupta"
